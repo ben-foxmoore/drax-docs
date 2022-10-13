@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: docs
+    env: static
+    buildCommand: pip install poetry && poetry install && poetry run mkdocs build
+    staticPublishPath: ./site
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.7
