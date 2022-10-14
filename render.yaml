@@ -7,3 +7,24 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.7
+  - type: web
+    name: oauth2-proxy
+    env: docker
+    envVars:
+      - key: UPSTREAM
+        fromService:
+          name: docs
+          type: web
+          property: hostport
+      - key: OAUTH2_PROXY_PROVIDER
+        sync: false
+      - key: OAUTH2_PROXY_CLIENT_ID
+        sync: false
+      - key: OAUTH2_PROXY_CLIENT_SECRET
+        sync: false
+      - key: OAUTH2_PROXY_COOKIE_SECRET
+        generateValue: true
+      - key: OAUTH2_PROXY_EMAIL_DOMAINS
+        value: 'accelleran.com'
+      - key: OAUTH2_PROXY_HTTP_ADDRESS
+        value: ":10000"
