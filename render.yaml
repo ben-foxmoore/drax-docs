@@ -13,10 +13,14 @@ services:
     plan: free
     envVars:
       - key: UPSTREAM
-        fromService:
-          name: docs
+#         fromService:
+#           name: docs
+#           type: web
+#           property: hostport
+        fromService: 
           type: web
-          property: hostport
+          name: docs 
+          envVarKey: RENDER_EXTERNAL_URL
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
       - key: OAUTH2_PROXY_CLIENT_ID
