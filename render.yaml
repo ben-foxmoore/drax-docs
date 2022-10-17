@@ -12,15 +12,15 @@ services:
     env: docker
     plan: free
     envVars:
-      - key: UPSTREAM
-#         fromService:
-#           name: docs
-#           type: web
-#           property: hostport
+      - key: OAUTH2_PROXY_UPSTREAM
         fromService: 
           type: web
           name: docs 
           envVarKey: RENDER_EXTERNAL_URL
+        # fromService:
+        #   name: docs
+        #   type: web
+        #   property: hostport
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
       - key: OAUTH2_PROXY_CLIENT_ID
