@@ -12,7 +12,7 @@ services:
     env: docker
     plan: free
     envVars:
-      - key: OAUTH2_PROXY_UPSTREAM
+      - key: OAUTH2_PROXY_UPSTREAMS
         fromService: 
           type: web
           name: docs 
