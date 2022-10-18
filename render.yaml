@@ -1,7 +1,7 @@
 services:
   - type: pserv
     name: docs
-    env: static
+    env: python
     region: frankfurt
     buildCommand: pip install poetry && poetry install && poetry run mkdocs serve
     staticPublishPath: ./site
