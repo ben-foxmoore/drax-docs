@@ -4,7 +4,7 @@ services:
     env: python
     region: frankfurt
     buildCommand: pip install poetry && poetry install
-    startCommand: poetry run mkdocs serve
+    startCommand: poetry run mkdocs serve --dev-addr '127.0.0.1:10000'
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.7
