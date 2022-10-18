@@ -1,8 +1,9 @@
 services:
-  - type: web
+  - type: pserv
     name: docs
     env: static
-    buildCommand: pip install poetry && poetry install && poetry run mkdocs build
+    region: frankfurt
+    buildCommand: pip install poetry && poetry install && poetry run mkdocs serve
     staticPublishPath: ./site
     envVars:
       - key: PYTHON_VERSION
@@ -10,7 +11,8 @@ services:
   - type: web
     name: oauth2-proxy
     env: docker
-    plan: free
+    plan: starter
+    region: frankfurt
     envVars:
       - key: OAUTH2_PROXY_UPSTREAMS
         value: "https://google.com"
