@@ -17,7 +17,7 @@ services:
       - key: UPSTREAM
         fromService:
           name: docs
-          type: web
+          type: pserv
           property: hostport
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
