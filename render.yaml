@@ -14,16 +14,11 @@ services:
     plan: starter
     region: frankfurt
     envVars:
-      - key: OAUTH2_PROXY_UPSTREAMS
-        value: "https://google.com"
-        # fromService: 
-        #   type: web
-        #   name: docs 
-        #   envVarKey: RENDER_EXTERNAL_URL
-        # fromService:
-        #   name: docs
-        #   type: web
-        #   property: hostport
+      - key: UPSTREAM
+        fromService:
+          name: docs
+          type: web
+          property: hostport
       - key: OAUTH2_PROXY_PROVIDER
         sync: false
       - key: OAUTH2_PROXY_CLIENT_ID
