@@ -13,10 +13,11 @@ services:
     plan: free
     envVars:
       - key: OAUTH2_PROXY_UPSTREAMS
-        fromService: 
-          type: web
-          name: docs 
-          envVarKey: RENDER_EXTERNAL_URL
+        value: "https://google.com"
+        # fromService: 
+        #   type: web
+        #   name: docs 
+        #   envVarKey: RENDER_EXTERNAL_URL
         # fromService:
         #   name: docs
         #   type: web
